@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel='stylesheet' type ='text/css' href='style.css'/>
+        <title>Survey Form</title>
+    </head>
+    <body>
+        <header>
+            <h1 id='title'>Ski Form</h1>
+        </header>
+        <main>
+            <form id='survey-form'>
+                <p id='description'>Let us know how you shred</p>
+                <label for="name" id='name-label'>
+                    <p>Name:  <input id='name' type='text' required placeholder="Enter your name"></p>
+                </label>
+                <label for='email' id='email-label'>
+                    <p>Email:  <input id='email' type='email' required placeholder="Enter your email"></p>
+                </label>
+                <label for='age' id='age-label'>
+                    <p>Age:  <input id='age' type='number' min='0' max='130' required placeholder="0"></p>
+                </label>
+                <label for='number' id='number-label'>
+                    <p>How many weeks a year do you ski?  <input id='number' type='number' min='0' max='52' required placeholder="0-52"></p>
+                </label>
+                <label for='drop-down'>
+                    <p>Which option describes your current position?
+                    <select name='drop-down' required id='dropdown'>
+                        <option value="" selected disabled hidden>Choose here</option>
+                        <option value='punter'>Punter</option>
+                        <option value='seasonaire'>Seasonal Worker</option>
+                        <option value='snow-bird'>Snow Bird</option>
+                        <option value='ski-bum'>Ski-bum</option>
+                        <option value='resident'>Mountain Resident</option>
+                    </select>
+                    </p>
+                </label>
+                <label for='purchase'>
+                    <p>How likely are you to buy new equipment this winter?</p>
+                        <label>Definitely
+                            <input type='radio' name='purchase' value='definitely' required>
+                        </label>
+                        <label>Most Likely
+                            <input type='radio' name='purchase' value=most-likley'>
+                        </label>
+                        <label>Maybe
+                            <input type='radio' name='purchase' value='maybe'>
+                        </label>
+                        <label>Probably Not
+                            <input type='radio' name='purchase' value='probably-not'>
+                        </label>
+                        <label>Definitely Not
+                            <input type='radio' name='purchase' value='definitely-not'>
+                        </label>
+                </label><br>
+                <label for='location'>
+                    <p>Where are we most likely to find you? (Check as many as required)</p>
+                    <label>Piste
+                        <input type='checkbox' name='location' value='piste' required>
+                    </label>
+                    <label>Nursery Slope
+                        <input type='checkbox' name='location' value='nursery'>
+                    </label>
+                    <label>Park
+                        <input type='checkbox' name='location' value='park'>
+                    </label>
+                    <label>Off-piste
+                        <input type='checkbox' name='location' value='off-piste'>
+                    </label>
+                    <label>At the bar
+                        <input type='checkbox' name='location' value='bar'>
+                    </label>
+                </label><br>
+                <label for='why'>
+                    <p>What is it that makes you get on the hill in the morning (or afternoon)?</p>
+                    <textarea id='why' name='why' maxlength="1000">Why shred?</textarea>
+                </label><br><hr>
+                <button id='submit' type='submit'>Submit</button>
+            </form>
+        </main>
+    </body>
+</html>
