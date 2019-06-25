@@ -32,15 +32,15 @@ a{
     text-decoration: none;
     font-family: 'Allerta Stencil', sans-serif;
 }
-h1{
-    flex-shrink: 1;
-    flex-grow: 1;
-    flex-basis: 20%;
-}
 #logo{
     display: block;
     max-height: auto; 
     max-width: 100%;
+}
+h1{
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 20%;
 }
 #img-div{
     height: auto;
