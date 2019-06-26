@@ -12,9 +12,9 @@
         <nav id='nav-bar'>
             <img src='../tribute_page/images/logo.jpg' alt='LINE' id='header-img'/>
             <ul id='nav-links'>
-                <li><a id='nav-link' href='#intro'>Intro</a></li>
-                <li><a id='nav-link' href='#gear'>Gear</a></li>
-                <li><a id='nav-link' href='#subscribe'>Subscribe</a></li>
+                <li><a class='nav-link' href='#intro'>Intro</a></li>
+                <li><a class='nav-link' href='#gear'>Gear</a></li>
+                <li><a class='nav-link' href='#subscribe'>Subscribe</a></li>
             </ul>
         </nav>
     </header>
@@ -196,10 +196,10 @@
         <hr>
         <div id='subscribe'>
             <h2>Subscribe</h2>
-            <form>
+            <form id='form'action="https://www.freecodecamp.com/email-submit" method="POST">
                 <label for='email' id='email-label'>
                     <p>Keep up to date with new product launches:
-                    <input id='email' type='email' placeholder="Enter your email here" required><button type='submit'>Submit</button></p>
+                    <input id='email' type='email' placeholder="Enter your email here" name='email' required><input id='submit' type='submit' value='submit'></p>
                 </label>
             </form>
         </div>
