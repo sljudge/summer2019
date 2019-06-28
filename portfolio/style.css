@@ -1,0 +1,150 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    font-size: 0;
+    z-index: -1;
+}
+header{
+    width: 100%;
+    height: 80px;
+}
+#nav{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #323232;
+    border-bottom: black solid 3px;
+    z-index: 1;
+}
+#nav a{
+    display: flex;
+    align-items: center;
+    padding: 0vw 5vw 0vw 5vw;
+    height: 100%;
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: 50;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+#nav1:hover{
+    background-color: #a541e1;
+    color: black;
+}
+#nav2:hover{
+    background-color: #c5e43e;
+    color: black;
+}
+#nav3:hover{
+    background-color: #ee4f3a;
+    color: black;
+}
+#welcome-section{
+    background-image: url('images/welcome.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    font-size: 0;
+}
+#title{
+    position: absolute;
+    top: 49%;
+    right:45%;
+    width: 54%;
+    font-size: 3rem;
+    text-align: right;
+    margin: 0;
+    background-color: black;
+    border-radius: 20px;
+    color: whitesmoke;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    font-weight: 300;
+}
+#sub-title{
+    position: absolute;
+    bottom: 22%;
+    left: 50%;
+    width: 50%;
+    font-size: 1rem;
+    text-align: left;
+    background-color: black;
+    color: whitesmoke;
+    padding: 1rem 0 1rem 1rem;
+    border-radius: 20px 0px 0px 20px;
+    letter-spacing: 2px;
+}
+@media only screen and (max-width: 480px){
+    #sub-title{
+        display: none;
+    }
+}
+#quote{
+    background-color: #ea8b3b;
+    width: 100%;
+    text-align: center;
+    font-weight: 300;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+#quote h2{
+    margin: 0;
+    font-size: 1.25rem;
+}
+#quote p{
+    font-size: 1rem;
+}
+#projects{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    font-size: 0;
+    background-color: #40e2b3;
+}
+.project-tile{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 31rem;
+    height: auto;
+    padding: 2%;
+}
+.project-tile h3{
+    font-size: 1.25rem;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #323232;
+    color: whitesmoke;
+    box-shadow: 10px 10px;
+}
+.tile:hover + h3{
+        background-color: #ee4f3a;
+        color: #323232;
+}
+.project-tile h3:hover{
+    background-color: #ee4f3a;
+    color: #323232;
+}
+.tile{
+    width: 100%;
+    height: auto;
+    box-shadow: 10px 10px #323232;
+
+}
+#contact{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #a541e1;
+    color: whitesmoke;
+}
+#contact i{
+    font-size: 2.5rem;
+    padding: 10px
+}
