@@ -44,7 +44,7 @@ let result3 = pwRegex.test(sampleWord);
 let repeatNum = "42 42 42";
 let reRegex = /(\d+)(\s)\1\2\1/; //
 let result4 = reRegex.test(repeatNum);
-// console.log(result4);
+console.log(result4);
 
 /////////////////////////////////////////////////////////////////////
 

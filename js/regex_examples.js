@@ -15,7 +15,7 @@ let result2 = exampleStr.match(unRegex);
 let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
 let vowelRegex = /[aeiou]/gi; // creates a character class
 let result3 = quoteSample.match(vowelRegex);
-// console.log(result3);
+console.log(result3);
 
 ////////////////////////////////////////////
 
@@ -83,4 +83,4 @@ let result11 = favRegex.test(favWord);
 let repeatStr = "regex regex";
 let repeatRegex = /(\w+)\s\1/; // \1 specifies capture group number then increments as more groups are defined
 repeatRegex.test(repeatStr); // Returns true
-repeatStr.match(repeatRegex); // Returns ["regex regex", "regex"]
+console.log(repeatStr.match(repeatRegex)); // Returns ["regex regex", "regex"]
