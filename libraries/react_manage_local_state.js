@@ -12,7 +12,7 @@ class DisplayMessages extends React.Component {
   
   handleChange(userInput){
     this.setState({
-      input: userInput
+      input: userInput.target.value
     })
   };
 
@@ -20,7 +20,7 @@ class DisplayMessages extends React.Component {
     const currentInput = this.state.input;
     this.setState({
       input: '',
-      messages: [...messages, currentInput]
+      messages: [...this.state.messages, currentInput]
     })
   }
 
@@ -30,7 +30,7 @@ class DisplayMessages extends React.Component {
         <h2>Type in a new Message:</h2>
         { /* render an input, button, and ul here */ }
         <input type='text' onChange={this.handleChange} value={this.state.input}/>
-        <button onClick={submitMessage}>Submit</button>
+        <button onClick={this.submitMessage}>Submit</button>
         <ul>
           {this.state.messages.map(item => <li>{item}</li>)}
         </ul>

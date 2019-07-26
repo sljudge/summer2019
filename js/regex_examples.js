@@ -29,7 +29,7 @@ let result4 = quoteSample1.match(alphabetRegex);
 let quoteSample2 = "3 blind mice.";
 let myRegex = /[^aeiou0-9]/gi; // ^ negates -> matches all characters that are not vowels or numbers
 let result5 = quoteSample2.match(myRegex);
-// console.log(result5);
+console.log(result5);
 
 //////////////////////////////////////////
 
@@ -115,7 +115,7 @@ let result12 = userCheck.test(username);
 let sample = "Whitespace is important in separating  words";
 let countWhiteSpace = /\s{2,}/g; // \s = [\r\t\f\n\v]
 let result13 = sample.match(countWhiteSpace);
-console.log(result13);
+// console.log(result13);
 
 ///////////////////////////////////////////////////////////////
 

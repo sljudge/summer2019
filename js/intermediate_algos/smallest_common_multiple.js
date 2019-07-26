@@ -4,13 +4,9 @@ function smallestCommons(arr) {
         let primes = [2];
         let primeFactors = [];
         while( num%2 === 0 ){
-            console.log('num', num);
             num = num/2;
             primeFactors.push(2);
         };
-        console.log('8 says hello');
-        console.log('num ', num);
-        console.log(primeFactors);
         if(num === 1){ 
             return primeFactors
         }else{
@@ -41,35 +37,29 @@ function smallestCommons(arr) {
         return counts;
     }
 
-    function mergeCounts(obj1, obj2){
-        mergeCount = obj1;
-        keys = [...new Set(Object.keys(obj1).concat(Object.keys(obj2)))];
-        console.log('keys ', keys);
-        for(x of keys){
-            if( !mergeCount[x]){
-                mergeCount[x] = obj2[x];
-            }else if( obj2[x] > obj1[x] ){
-                mergeCount[x] = obj2[x];
+    function mergeCounts(counts){
+        let mergeCount = {};
+        for( let record of counts ){
+            for( let key of Object.keys(record)){
+                mergeCount[key] = record[key] > mergeCount[key] ? record[key] : mergeCount[key] >= record[key] ? mergeCount[key] : record[key];
             }
         }
         return mergeCount;
     }
-
-    one = findPrimeFactors(arr[0]);
-    console.log(one);
-    two = findPrimeFactors(arr[1]);
-    console.log(two);
-    count1 = countOccurences(one);
-    count2 = countOccurences(two);
-    count = mergeCounts(count1, count2);
-    console.log(count);
-    lcm = Object.keys(count).map( x => Math.pow(x, count[x])).reduce( (total, x) => total*x );
-    console.log(one, two);
+    
+    arr = arr.sort((a,b) => a-b);
+    let numbers = [];
+    for(let i=arr[0]; i<=arr[1]; ++i){
+        numbers.push(i);
+    };
+    console.log('numbers',numbers);
+    let final = mergeCounts(numbers.map( x => findPrimeFactors(x) ).map( y => countOccurences(y)));
+    console.log(final);
+    let lcm = Object.keys(final).map( x => Math.pow( x, final[x] ) ).reduce( (total, x) => total*x );
     console.log(lcm);
 
-    
-    return arr;
+    return lcm;
 }
   
   
-  smallestCommons([1, 5]);
+  smallestCommons([2,10]);
