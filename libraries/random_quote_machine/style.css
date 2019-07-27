@@ -43,6 +43,9 @@ html, body{
 #quote-icon{
   align-self: flex-start
 }
+#quote{
+  font-weight: 600
+}
 #author-row{
   height: 15%
 }
@@ -51,9 +54,9 @@ html, body{
   align-items: center;
   display: flex
 }
-@media only screen and (max-width: 350px){
+@media only screen and (max-width: 380px){
   .container{
-    height: 60vh
+    height: 75vh
   }
 }
 
