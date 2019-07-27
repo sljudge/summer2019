@@ -1,0 +1,60 @@
+html, body{
+  height: 100%;
+}
+.page{
+  height: 100vh;
+  width: 100vw;
+  background-color: #408080;
+  display: flex;
+  align-items: center;
+  height: 100%
+}
+.container{
+  flex-direction: column;
+  background-color: white;
+  border-radius: 25px;
+  padding: 25px 25px 5px 25px;
+  width: 80vw;
+  height: 30vh;
+}
+.icon{
+  font-size: 40px;
+  color: #4f555b;
+  padding: 0px 5px 0px 10px;
+}
+.social-media:hover{
+  font-weight:700
+}
+
+#new-quote{
+  height: 40px;
+  background-color: #4f555b;
+  color: white;
+}
+#new-quote:hover{
+  color: white;
+  font-weight: 550
+}
+#quote-row{
+  height: 50%;
+  display: flex;
+  align-items: center
+}
+#quote-icon{
+  align-self: flex-start
+}
+#author-row{
+  height: 15%
+}
+#bottom-row{
+  height: 35%;
+  align-items: center;
+  display: flex
+}
+@media only screen and (max-width: 350px){
+  .container{
+    height: 60vh
+  }
+}
+
+

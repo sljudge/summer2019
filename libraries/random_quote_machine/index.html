@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+  <title>Random Quote Machine</title>
+  <meta charset='UTF8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+  <link rel='stylesheet' type='text/css' href='style.css'/>
+  <script src="https://kit.fontawesome.com/2af9b70016.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    function getQuote(){
+        $.getJSON('https://api.quotable.io/random', 
+      function(data){
+        console.log(data);
+        var quote = data.content;
+        var author = data.author;
+        $('#quote').text(quote);
+        $('#author').text(author);
+        })
+    }
+    function changeBackgroundColor(){
+      var colors = ['#408080', '#6d9f39', '#e65955', '#e09100', '#281b1d', '#3a9674', '#41a643', '#022f40', '#38aecc', '#0090c1', '#053225', '#e34a6f', '#f7b2bd', '#b2a198', '#60a561', '#eadeda', '#998888', '#bfb8ad', '#823329', '#8a3033']
+      var int = Math.floor(Math.random()*21)
+      $('.page, #new-quote').css('background-color', colors[int])
+      $('.icon, #quote, #author').css('color', colors[int])
+    }
+    $(document).ready(function(){
+      getQuote();
+      changeBackgroundColor();
+      $('#new-quote').click( () => (getQuote(), changeBackgroundColor()));
+    });
+
+  </script>
+  
+</head>
+<html>
+  <body>
+    <div class='page'>
+      <div class='container d-flex'>
+        <div id='quote-row'>
+          <i id='quote-icon' class="fas fa-quote-left icon"></i><p id='quote' class="lead"></p>
+        </div>
+        <div id='author-row'>
+          <p id='author' class='lead text-muted text-right'>Name of author</p>
+        </div>
+        <div id='bottom-row' class='row'>
+          <div class='col-xs-6 align-self-center'>
+            <a href="#"><i class="fab fa-twitter-square icon social-media"></i></a> <a href="#"><i class="fab fa-tumblr-square icon social-media"></i></a>
+          </div>
+          <div class='col-xs-6 text-right align-self-center'>
+            <button id='new-quote' class="btn btn-md btn-secondary lead">New Quote</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
