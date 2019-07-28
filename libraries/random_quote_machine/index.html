@@ -21,13 +21,16 @@
     function changeBackgroundColor(){
       var colors = ['#66cc00', '#049b4b', '#353535', '#e03e1e', '#fed130', '#07d6db', '#2364c6', '#4f555b', '#0097a9', '#02855', '#4e3629', '#651d32', '#500778', '#ea7600', '#3255a4', '#d50032', '#8f993e', '#000000', '#37003b', '#6200ee']
       var int = Math.floor(Math.random()*21)
-      $('.page, #new-quote').css('background-color', colors[int])
+      $('#quote, #author').fadeOut(1000, getQuote)
+      $('#page, #new-quote').css('background-color', colors[int])
       $('.icon, #quote, #author').css('color', colors[int])
+      $('#quote, #author').fadeIn(1500)
     }
     $(document).ready(function(){
       getQuote();
-      changeBackgroundColor();
-      $('#new-quote').click( () => (getQuote(), changeBackgroundColor()));
+      $('#new-quote').click( () => (
+        changeBackgroundColor()
+        ));
     });
 
   </script>
@@ -35,7 +38,7 @@
 </head>
 <html>
   <body>
-    <div class='page'>
+    <div id='page'>
       <div class='container d-flex'>
         <div id='quote-row'>
           <i id='quote-icon' class="fas fa-quote-left icon"></i><p id='quote' class="lead"></p>
