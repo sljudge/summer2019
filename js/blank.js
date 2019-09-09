@@ -1,41 +1,27 @@
-class DisplayMessages extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      input: '',
-      messages: []
+var sum = ['3', '+', '4', 'x', '54', '/', '27', 'x', '1'] // = 11
+
+function demo(sum){
+  var math = {
+    '/': (x,y) => parseFloat(x)/parseFloat(y),
+    'x': (x,y) => parseFloat(x)*parseFloat(y),
+    '+': (x,y) => parseFloat(x)+parseFloat(y),
+    '-': (x,y) => parseFloat(x)-parseFloat(y),
+  }
+  for(op of ['/', 'x', '+', '-']){
+    while(sum.includes(op)){
+      for(x in sum){
+        if( sum[x] == op ){
+          segment = sum.slice(x-1, x+2)
+          insert = math[op](segment[0], segment[2]) 
+          sum.splice(x-1, 3, insert)
+        }
+      }
     }
-    this.handleChange = this.handleChange.bind(this);
-    this.submitMessage = this.submitMessage.bind(this)
   }
-  // add handleChange() and submitMessage() methods here
   
-  handleChange(userInput){
-    this.setState({
-      input: userInput
-    })
-  };
-
-  submitMessage(){
-    const currentInput = this.state.input;
-    this.setState({
-      input: '',
-      messages: [...messages, currentInput]
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <h2>Type in a new Message:</h2>
-        { /* render an input, button, and ul here */ }
-        <input type='text' onChange={this.handleChange} value={this.state.input}/>
-        <button onClick={submitMessage}>Submit</button>
-        <ul>
-          {this.state.messages.map(item => <li>{item}</li>)}
-        </ul>
-        { /* change code above this line */ }
-      </div>
-    );
-  }
-};
+  return sum.toString()
+}
+// var total = 0
+console.log(sum.reduce( ((total, item) => total+item.length ),0) )
+console.log(demo(sum))
+console.log(demo(sum).length)
